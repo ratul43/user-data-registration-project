@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "2c2481d5-eb0d-4e4f-a246-89012ea43ba4",
+		"name": "user data registration project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38296217"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"rakib@gmail.com\",\r\n    \"firstName\": \"Rakib\",\r\n    \"lastName\": \"Hasan\",\r\n    \"NIDNumber\": \"871897198\",\r\n    \"phoneNumber\": \"017357163867\",\r\n    \"password\": \"123\",\r\n    \"bloodGroup\": \"B+\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5050/api/Registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"Registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"akir98@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURL}}/Login",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProfileDetails",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASEURL}}/ProfileDetails",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"ProfileDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllUserProfile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASEURL}}/AllUserProfile",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"AllUserProfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProfileUpdate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Rain\",\r\n    \"lastName\": \"Hasan\",\r\n    \"NIDNumber\": \"871897198\",\r\n    \"phoneNumber\": \"017357163867\",\r\n    \"password\": \"123\",\r\n    \"bloodGroup\": \"B+\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURL}}/ProfileUpdate",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"ProfileUpdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Rain\",\r\n    \"lastName\": \"Hasan\",\r\n    \"NIDNumber\": \"871897198\",\r\n    \"phoneNumber\": \"017357163867\",\r\n    \"password\": \"123\",\r\n    \"bloodGroup\": \"B+\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURL}}/DeleteUser/676180aed570d02fc8b18a3c",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"DeleteUser",
+						"676180aed570d02fc8b18a3c"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASEURL",
+			"value": "http://localhost:5050/api",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFraXI5OEBnbWFpbC5jb20iLCJ1c2VyX2lkIjoiNjc2MTgzZDkyYWFkODBlOTg2M2FkN2MzIiwiaWF0IjoxNzM0NDQ2NDY2LCJleHAiOjE3MzcwMzg0NjZ9.y6ArfNCtNekZAkynPQCaSjdXWx3DnLlHs_HtT42ktm4",
+			"type": "string"
+		}
+	]
+}
